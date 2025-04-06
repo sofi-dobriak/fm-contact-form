@@ -59,9 +59,8 @@ textarea {
   border-radius: 8px;
   padding: 12px;
   resize: none;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
-  &:hover,
   &:focus {
     border-color: #5B8B7B;
     outline: none;
@@ -95,4 +94,12 @@ button {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.error {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  color: #d94747;
+  font-size: 14px;
 }

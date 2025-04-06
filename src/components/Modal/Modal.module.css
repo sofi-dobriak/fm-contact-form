@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2A4244;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  padding: 26px;
+  border-radius: 8px;
+  transition: top .3s ease-in;
+  z-index: 999;
+}
+
+.modal.isOpen {
+  top: 10px;
+}
+
+.checkIcon,
+.closeIcon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closeIconTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.title {
+  color: #fff;
+  font-size: 16px;
+}
+
+.description {
+  color: #ffffff93;
+  font-size: 14px;
+}
