@@ -1,9 +1,9 @@
 .modal {
   position: fixed;
-  top: -100px;
+  top: -160px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #2A4244;
+  background-color: var(--modal-bg-color);
   width: 100%;
   max-width: 450px;
   height: auto;
@@ -19,7 +19,7 @@
 
 .checkIcon,
 .closeIcon {
-  color: #fff;
+  color: var(--modal-icon-color);
   font-size: 20px;
 }
 
@@ -39,11 +39,11 @@
 }
 
 .title {
-  color: #fff;
+  color: var(--modal-title-color);
   font-size: 16px;
 }
 
 .description {
-  color: #ffffff93;
+  color: var(--modal-description-color);
   font-size: 14px;
 }

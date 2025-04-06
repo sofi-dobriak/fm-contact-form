@@ -25,6 +25,11 @@ const ContactForm = ({ toggleModal }) => {
         toggleModal();
     };
 
+    const getBordersColor = (name, touched, errors) => {
+        if (!touched[name]) return '';
+        return errors[name] ? styles.errorBorder : styles.successBorder;
+    };
+
     const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 
     const validationSchema = Yup.object().shape({
@@ -41,17 +46,12 @@ const ContactForm = ({ toggleModal }) => {
             .required('This field is required'),
         message: Yup.string()
             .min(2, 'Minimum 2 chars')
-            .max(50, 'Max 20 chars')
+            .max(100, 'Max 100 chars')
             .required('This field is required'),
         agree: Yup.boolean()
-            .oneOf([true], 'To submit this form, please consest to being contacted')
+            .oneOf([true], 'To submit this form, please consent to being contacted')
             .required(),
     });
-
-    const getBordersColor = (name, errors, touched) => {
-        if (!touched[name]) return '';
-        return errors[name] ? styles.errorBorder : styles.successBorder;
-    };
 
     return (
         <div className={styles.wrapper}>
