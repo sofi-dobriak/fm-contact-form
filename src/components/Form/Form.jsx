@@ -1,8 +1,15 @@
 import { Formik, Form, Field } from 'formik';
 import styles from './Form.module.css';
 import * as Yup from 'yup';
+import { useId } from 'react';
 
 const ContactForm = () => {
+    const firstNameID = useId();
+    const lastNameID = useId();
+    const emailID = useId();
+    const messageID = useId();
+    const agreeID = useId();
+
     const initialValues = {
         firstName: '',
         lastName: '',
@@ -20,82 +27,104 @@ const ContactForm = () => {
     const validationSchema = Yup.object().shape({});
 
     return (
-        <div className={styles.formWrapper}>
+        <div className={styles.wrapper}>
             <h1 className={styles.title}>Contact Us</h1>
+
             <Formik
                 initialValues={initialValues}
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
             >
-                <Form className={styles.form}>
+                <Form>
                     <div className={styles.nameContainer}>
-                        <label className={styles.label}>
-                            <div className={styles.labelStarContainer}>
-                                <span>First Name </span>
-                                <span className={styles.star}>*</span>
-                            </div>
-                            <Field className={styles.input} type='text' name='firstName' />
-                        </label>
-                        <label className={styles.label}>
-                            <div className={styles.labelStarContainer}>
-                                <span>Last Name</span>
-                                <span className={styles.star}>*</span>
-                            </div>
-                            <Field className={styles.input} type='text' name='lastName' />
-                        </label>
-                    </div>
-                    <label className={styles.label}>
-                        <div className={styles.labelStarContainer}>
-                            <span>Email Address</span>
-                            <span className={styles.star}>*</span>
+                        <div className={styles.labelInputNameContainer}>
+                            <label htmlFor={firstNameID}>
+                                First Name <span>*</span>
+                            </label>
+                            <Field
+                                type='text'
+                                name='firstName'
+                                id={firstNameID}
+                                className={styles.nameInput}
+                            />
                         </div>
+                        <div className={styles.labelInputNameContainer}>
+                            <label htmlFor={lastNameID}>
+                                Last Name <span>*</span>
+                            </label>
+                            <Field
+                                type='text'
+                                name='lastName'
+                                id={lastNameID}
+                                className={styles.nameInput}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={styles.labelInputEmailContainer}>
+                        <label htmlFor={emailID}>
+                            Email Address <span>*</span>
+                        </label>
                         <Field
-                            className={`${styles.input} ${styles.emailInput}`}
                             type='email'
                             name='email'
+                            id={emailID}
+                            className={styles.emailInput}
                         />
-                    </label>
-                    <div className={styles.labelStarContainer}>
-                        <span>Query Type </span>
-                        <span className={styles.star}>*</span>
                     </div>
+
+                    <p className={styles.queryTitle}>
+                        Query Type <span>*</span>
+                    </p>
                     <div className={styles.radioContainer}>
                         <label className={styles.radioLabel}>
                             <Field
-                                className={styles.radioInput}
                                 type='radio'
                                 value='general'
                                 name='query'
+                                className={`${styles.radioInput} visuallyHidden`}
                             />
-                            General Enquiry
+                            <span className={styles.customRadio}></span>
+                            <span className={styles.radioLabelText}>General Enquiry</span>
                         </label>
                         <label className={styles.radioLabel}>
                             <Field
-                                className={styles.radioInput}
                                 type='radio'
                                 value='support'
                                 name='query'
+                                className={`${styles.radioInput} visuallyHidden`}
                             />
-                            Suppoty request
+                            <span className={styles.customRadio}></span>
+                            <span className={styles.radioLabelText}>Suppoty request</span>
                         </label>
                     </div>
-                    <label className={styles.label}>
-                        <div className={styles.labelStarContainer}>
-                            <span>Message</span>
-                            <span className={styles.star}>*</span>
-                        </div>
-                        <Field className={styles.textarea} as='textarea' name='message' />
-                    </label>
-                    <label className={styles.checkLabel}>
-                        <Field className={styles.checkInput} type='checkbox' name='agree' />
-                        <div>
-                            <span>I consest to being contacted by the team</span>
-                            <span className={styles.star}>*</span>
-                        </div>
-                    </label>
-                    <button className={styles.button} type='submit'>
-                        Submit
-                    </button>
+
+                    <div className={styles.labelInputMessageContainer}>
+                        <label htmlFor={messageID}>
+                            Message <span>*</span>
+                        </label>
+                        <Field
+                            as='textarea'
+                            name='message'
+                            id={messageID}
+                            className={styles.textArea}
+                        />
+                    </div>
+
+                    <div className={styles.labelInputCheckBoxContainer}>
+                        <label htmlFor={agreeID} className={styles.checkboxLabel}>
+                            <Field
+                                type='checkbox'
+                                name='agree'
+                                id={agreeID}
+                                className={`${styles.checkbox} visuallyHidden`}
+                            />
+                            <span className={styles.checkboxBorder}></span>I consent to being
+                            contacted by the team <span>*</span>
+                        </label>
+                    </div>
+
+                    <button type='submit'>Submit</button>
                 </Form>
             </Formik>
         </div>
