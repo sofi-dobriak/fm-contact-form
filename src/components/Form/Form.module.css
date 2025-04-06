@@ -57,6 +57,8 @@
   padding: 16px 24px;
   margin-bottom: 0;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .radioLabelText {
@@ -83,7 +85,6 @@ input[type="radio"]:checked+.customRadio::after {
   height: 10px;
   background-color: #0B6A54;
   border-radius: 50%;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -129,13 +130,13 @@ input[type="checkbox"]:checked+.checkboxBorder {
 input[type="checkbox"]:checked+.checkboxBorder::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 0px;
-  width: 6px;
-  height: 12px;
+  left: 50%;
+  top: 45%;
+  width: 5px;
+  height: 10px;
   border: solid #fff;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  transform: translateX(-45%) translateY(-50%) rotate(45deg);
 }
 
 .checkboxLabel {

@@ -1,15 +1,9 @@
 import { Formik, Form, Field } from 'formik';
 import styles from './Form.module.css';
 import * as Yup from 'yup';
-import { useId } from 'react';
+import { useId, useState } from 'react';
 
 const ContactForm = () => {
-    const firstNameID = useId();
-    const lastNameID = useId();
-    const emailID = useId();
-    const messageID = useId();
-    const agreeID = useId();
-
     const initialValues = {
         firstName: '',
         lastName: '',
@@ -18,6 +12,12 @@ const ContactForm = () => {
         message: '',
         agree: false,
     };
+
+    const firstNameID = useId();
+    const lastNameID = useId();
+    const emailID = useId();
+    const messageID = useId();
+    const agreeID = useId();
 
     const handleSubmit = (values, options) => {
         console.log(values);
@@ -95,7 +95,7 @@ const ContactForm = () => {
                                 className={`${styles.radioInput} visuallyHidden`}
                             />
                             <span className={styles.customRadio}></span>
-                            <span className={styles.radioLabelText}>Suppoty request</span>
+                            <span className={styles.radioLabelText}>Support request</span>
                         </label>
                     </div>
 
