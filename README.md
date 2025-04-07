@@ -1,5 +1,7 @@
 ## Contact form
 
+An educational training project. The layout was taken from [Frontent Mentor](https://www.frontendmentor.io/challenges) ✨
+
 ### 📓Project Description:
 
 This project implements an interactive contact form that allows users to enter their details and send messages.
