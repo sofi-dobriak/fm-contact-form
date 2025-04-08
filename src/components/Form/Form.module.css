@@ -166,6 +166,14 @@ input[type="checkbox"]:checked+.checkboxBorder::after {
   margin: 0;
 }
 
+.errorText {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  color: var(--error-text-color);
+  font-size: 14px;
+}
+
 .errorBorder {
   border-color: var(--error-border-color);
 }
@@ -199,6 +207,10 @@ input[type="checkbox"]:checked+.checkboxBorder::after {
 
   .agreeError {
     bottom: -30px;
+  }
+
+  .error {
+    bottom: 12px;
   }
 }
 

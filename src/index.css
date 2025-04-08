@@ -126,23 +126,11 @@ button {
   overflow: hidden;
 }
 
-.error {
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-  color: var(--error-text-color);
-  font-size: 14px;
-}
-
 @media (max-width: 768px) {
 
   input,
   textarea {
     margin-bottom: 30px;
-  }
-
-  .error {
-    bottom: 12px;
   }
 
 }

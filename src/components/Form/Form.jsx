@@ -79,7 +79,11 @@ const ContactForm = ({ toggleModal }) => {
                                         errors
                                     )}`}
                                 />
-                                <ErrorMessage name='firstName' component='span' className='error' />
+                                <ErrorMessage
+                                    name='firstName'
+                                    component='span'
+                                    className={styles.errorText}
+                                />
                             </div>
                             <div className={styles.labelInputNameContainer}>
                                 <label htmlFor={lastNameID}>
@@ -95,7 +99,11 @@ const ContactForm = ({ toggleModal }) => {
                                         errors
                                     )}`}
                                 />
-                                <ErrorMessage name='lastName' component='span' className='error' />
+                                <ErrorMessage
+                                    name='lastName'
+                                    component='span'
+                                    className={styles.errorText}
+                                />
                             </div>
                         </div>
 
@@ -113,7 +121,11 @@ const ContactForm = ({ toggleModal }) => {
                                     errors
                                 )}`}
                             />
-                            <ErrorMessage name='email' component='span' className='error' />
+                            <ErrorMessage
+                                name='email'
+                                component='span'
+                                className={styles.errorText}
+                            />
                         </div>
 
                         <p className={styles.queryTitle}>
@@ -160,7 +172,7 @@ const ContactForm = ({ toggleModal }) => {
                             <ErrorMessage
                                 name='message'
                                 component='span'
-                                className={`error ${styles.messageError}`}
+                                className={`${styles.errorText} ${styles.messageError}`}
                             />
                         </div>
 
@@ -178,7 +190,7 @@ const ContactForm = ({ toggleModal }) => {
                             <ErrorMessage
                                 name='agree'
                                 component='span'
-                                className={`error ${styles.agreeError}`}
+                                className={`${styles.errorText} ${styles.agreeError}`}
                             />
                         </div>
 
